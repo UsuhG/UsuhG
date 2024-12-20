@@ -46,7 +46,7 @@ Rayfield:Notify({
 local MainSection = MainTab:CreateSection("Scripts made by Kyra. Hub made by UsuhG")
 
 local Button = MainTab:CreateButton({
-   Name = "Kyra Gojo (Broken)",
+   Name = "Kyra Gojo",
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/UsuhG/UsuhG/refs/heads/main/protectgojo1.txt",true))()
    end,
@@ -55,7 +55,7 @@ local Button = MainTab:CreateButton({
 local Button = MainTab:CreateButton({
     Name = "Kyra Toji (Broken)",
     Callback = function()
-    loadstring(game:HttpGet("https://pastebin.com/raw/qvBj7ayf",true))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/UsuhG/UsuhG/refs/heads/main/toenail.txt",true))()
     end,
 })
 
