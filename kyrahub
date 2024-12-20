@@ -62,41 +62,22 @@ local Button = MainTab:CreateButton({
 local Button = MainTab:CreateButton({
    Name = "Kyra Kj",
    Callback = function()
-   --SETTINGS
-   _G.TpDash = false --tp dashes
-   _G.WallComboFrames = true
-   _G.WallCutscene = true --cutscene for wallcombo
-   _G.CustomSFX = true --may break some unsupported execs
-   _G.KJAnims = true --Plays real kj anims while others still see the FE anims
-   _G.ImpactTransparency = 0 --if u wanna see the world while seeing the frames then set it to 0.3 or smth
-   _G.MoreSFX = true --(Recommended if you want more spicier sfx than just official tsb sfx for kj)
-   _G.InfiniteKJ = true --(dont use for now, it breaks the script after death aka with num4 or num3) (to disable after use, choose another character)
-   _G.CustomAV = true
-   _G.nostunoption = false --(locks u in shiftlock btw)
-   _G.captions = true
-   --[[ NOTES:
-   ULT IS UNFINISHED
-   
-   Get Ultimate 1 by standing still, get Ultimate 2 by walking while Ulting
-   
-   Critical Blow has 4 Variants:
-   1 will change depending if u use Barrage before it.
-   2 Normal Jump Hold.
-   3 Uppercut + Jump Hold.
-   4 Downslam + Jump Hold.
-   
-   Sweep has 2 Variants:
-   1 Downslam + Jump Hold.
-   2 Normal Jump Hold.
-   
-   Critical Blow's and Sweeps' Normal jump variant, both have 1500 stud range outward
-   To Aim each jump var, just face ur character to the victim
-   (btw it tp's even if the victim is at a higher platform/level than u)
-   
-   Ravage does 46.5% Damage
-   ]]
-   
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/fartmaggot445/KYR/refs/heads/main/KJ"))()
+--SETTINGS
+_G.TpDash = false --tp dashes
+_G.WallComboFrames = true
+_G.WallCutscene = true --cutscene for wallcombo
+_G.KJAnims = true --Plays real kj anims while others still see the FE anims
+_G.ImpactTransparency = 0 --if u wanna see the world while seeing the frames then set it to 0.3 or smth
+_G.MoreSFX = true -- unused rn --(Recommended if you want more spicier sfx than just official tsb sfx for kj)
+_G.InfiniteKJ = false --(dont use for now, it breaks the script after death aka with num4 or num3) (to disable after use, choose another character)
+_G.CustomBlock = false
+_G.nostunoption = false --(locks u in shiftlock, and makes u fast)
+_G.captions = true
+_G.nodashcooldown = true --removes dash cooldown (ONLY WORKS ON PRIVATE SERVERS)
+_G.FightMusic = true --turns ur mindset into the main character (plays under 75% health)
+_G.DashTech = true --might break dash for some users, but allows you to use dash tech
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/fartmaggot445/KYR/refs/heads/main/KJ"))()
    end,
 })
 
