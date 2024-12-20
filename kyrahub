@@ -50,6 +50,13 @@ Rayfield:Notify({
 local InfosSection = InfosTab:CreateSection("Scripts are made by monkefriez aka Kyra")
 local InfosSection = InfosTab:CreateSection("Script hub made by usuhgaming aka UsuhG")
 
+local Button = InfosTab:CreateButton({
+    Name = "Kyra's Discord Server",
+    Callback = function()
+        setclipboard("discord.gg/kyrascripts")
+        print("Discord invite link copied to clipboard!")
+    end,
+})
 
 
 local MainSection = MainTab:CreateSection("The Strongest Hero")
