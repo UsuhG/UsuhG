@@ -53,7 +53,7 @@ local Button = MainTab:CreateButton({
 })
 
 local Button = MainTab:CreateButton({
-    Name = "Kyra Toji (Broken)",
+    Name = "Kyra Toji",
     Callback = function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/UsuhG/UsuhG/refs/heads/main/toenail.txt",true))()
     end,
