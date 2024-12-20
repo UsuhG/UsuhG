@@ -1,0 +1,176 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "Kyra Hub",
+   LoadingTitle = "Kyra Hub",
+   LoadingSubtitle = "by UsuhG",
+   ConfigurationSaving = {
+      Enabled = false,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Big Hub"
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+   KeySystem = true, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Kyra Hub Key System",
+      Subtitle = "Key System",
+      Note = "This is only made for people that has early access and whitelist",
+      FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"Kyr@1sc001"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+
+local MainTab = Window:CreateTab("Characters", nil) -- Title, Image
+
+Rayfield:Notify({
+   Title = "You exucuted the script",
+   Content = "Thanks for using my script",
+   Duration = 5,
+   Image = nil,
+   Actions = { -- Notification Buttons
+      Ignore = {
+         Name = "Okay!",
+         Callback = function()
+         print("The user tapped Okay!")
+      end
+   },
+},
+})
+
+local MainSection = MainTab:CreateSection("Scripts made by Kyra. Hub made by UsuhG")
+
+local Button = MainTab:CreateButton({
+   Name = "Kyra Gojo",
+   Callback = function()
+   loadstring(game:HttpGet("https://pastebin.com/raw/qxXCPqFG",true))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+    Name = "Kyra Toji",
+    Callback = function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/qvBj7ayf",true))()
+    end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Kyra Kj",
+   Callback = function()
+   --SETTINGS
+   _G.TpDash = false --tp dashes
+   _G.WallComboFrames = true
+   _G.WallCutscene = true --cutscene for wallcombo
+   _G.CustomSFX = true --may break some unsupported execs
+   _G.KJAnims = true --Plays real kj anims while others still see the FE anims
+   _G.ImpactTransparency = 0 --if u wanna see the world while seeing the frames then set it to 0.3 or smth
+   _G.MoreSFX = true --(Recommended if you want more spicier sfx than just official tsb sfx for kj)
+   _G.InfiniteKJ = true --(dont use for now, it breaks the script after death aka with num4 or num3) (to disable after use, choose another character)
+   _G.CustomAV = true
+   _G.nostunoption = false --(locks u in shiftlock btw)
+   _G.captions = true
+   --[[ NOTES:
+   ULT IS UNFINISHED
+   
+   Get Ultimate 1 by standing still, get Ultimate 2 by walking while Ulting
+   
+   Critical Blow has 4 Variants:
+   1 will change depending if u use Barrage before it.
+   2 Normal Jump Hold.
+   3 Uppercut + Jump Hold.
+   4 Downslam + Jump Hold.
+   
+   Sweep has 2 Variants:
+   1 Downslam + Jump Hold.
+   2 Normal Jump Hold.
+   
+   Critical Blow's and Sweeps' Normal jump variant, both have 1500 stud range outward
+   To Aim each jump var, just face ur character to the victim
+   (btw it tp's even if the victim is at a higher platform/level than u)
+   
+   Ravage does 46.5% Damage
+   ]]
+   
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/fartmaggot445/KYR/refs/heads/main/KJ"))()
+   end,
+})
+
+local Button = MainTab:CreateButton({
+    Name = "No Dash Cooldown",
+    Callback = function()
+
+workspace:SetAttribute("NoDashCooldown", true)
+    end,
+})
+
+local Button = MainTab:CreateButton({
+    Name = "Prison Realm",
+    Callback = function()
+
+local plr = game:GetService("Players").LocalPlayer
+local ch = plr.Character
+local entered = false
+local og = CFrame.new(0,0,0)
+
+local tool = Instance.new("Tool")
+tool.Name = "Entrapment"
+tool.RequiresHandle = false
+tool.Parent = plr.Backpack
+tool.Equipped:Connect(function()
+--[[local args = {
+    [1] = {
+        ["Dash"] = Enum.KeyCode.W,
+        ["Key"] = Enum.KeyCode.Q,
+        ["Goal"] = "KeyPress"
+    }
+}
+
+game:GetService("Players").LocalPlayer.Character.Communicate:FireServer(unpack(args))
+]]
+--[[local wall = Instance.new("Part",workspace)
+wall.Anchored = true
+wall.Size = Vector3.new(10, 10, 2)
+wall.CFrame = ch.HumanoidRootPart.CFrame*CFrame.new(0,0,-10)
+game.Debris:AddItem(wall,2)]]
+og = ch.HumanoidRootPart.CFrame
+
+entered = true
+--ch.HumanoidRootPart.CFrame = ch.HumanoidRootPart.CFrame*CFrame.new(0,1,0)*CFrame.Angles(math.rad(-90),0,0)
+ch.HumanoidRootPart.CFrame = CFrame.new(-55.377, 30.577, 20318.307)*CFrame.Angles(math.rad(0), math.rad(180), math.rad(0))--1064.329, 151.927, 23029.236 495.647797,440.505676,295.801971)*CFrame.fromEulerAnglesXYZ(math.rad(0), math.rad(180), math.rad(0))
+wait(.3)
+local args = {
+    [1] = {
+        ["Goal"] = "Wall Combo"
+    }
+}
+
+ch.Communicate:FireServer(unpack(args))
+
+ch.HumanoidRootPart.CFrame = og
+end)
+local tool = Instance.new("Tool")
+tool.Name = "Enter"
+tool.RequiresHandle = false
+tool.Parent = plr.Backpack
+
+og = ch.HumanoidRootPart.CFrame
+
+tool.Equipped:Connect(function()
+    if entered == true then
+        tool.Name = "Enter"
+        ch.HumanoidRootPart.CFrame = og
+        entered = false
+    else
+        og = ch.HumanoidRootPart.CFrame
+        tool.Name = "Leave"
+        ch.HumanoidRootPart.CFrame = CFrame.new(-55.377, 30.577, 20318.307)--
+        entered = true
+    end
+end)
+    end,
+})
