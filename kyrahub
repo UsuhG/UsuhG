@@ -28,6 +28,10 @@ local Window = Rayfield:CreateWindow({
 
 local MainTab = Window:CreateTab("Characters", nil) -- Title, Image
 
+local OthersTab = Window:CreateTab("Others", nil) -- Title, Image
+
+local InfosTab = Window:CreateTab("Infos", nil) -- Title, Image
+
 Rayfield:Notify({
    Title = "You exucuted the script",
    Content = "Thanks for using my script",
@@ -43,20 +47,18 @@ Rayfield:Notify({
 },
 })
 
-local MainSection = MainTab:CreateSection("Scripts made by Kyra. Hub made by UsuhG")
+local InfosSection = InfosTab:CreateSection("Scripts are made by monkefriez aka Kyra")
+local InfosSection = InfosTab:CreateSection("Script hub made by usuhgaming aka UsuhG")
+
+
+
+local MainSection = MainTab:CreateSection("The Strongest Hero")
 
 local Button = MainTab:CreateButton({
    Name = "Kyra Gojo",
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/UsuhG/UsuhG/refs/heads/main/protectgojo1.txt",true))()
    end,
-})
-
-local Button = MainTab:CreateButton({
-    Name = "Kyra Toji",
-    Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/UsuhG/UsuhG/refs/heads/main/toenail.txt",true))()
-    end,
 })
 
 local Button = MainTab:CreateButton({
@@ -124,8 +126,19 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/fartmaggot445/KYR/ref
    end,
 })
 
+local MainSection = MainTab:CreateSection("Blade Master")
+
 local Button = MainTab:CreateButton({
-    Name = "No Dash Cooldown",
+    Name = "Kyra Toji",
+    Callback = function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/UsuhG/UsuhG/refs/heads/main/toenail.txt",true))()
+    end,
+})
+
+
+
+local Button = MainTab:CreateButton({
+    Name = "No Dash Cooldown (Only works in PS)",
     Callback = function()
 
 workspace:SetAttribute("NoDashCooldown", true)
