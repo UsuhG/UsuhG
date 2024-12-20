@@ -48,7 +48,7 @@ local MainSection = MainTab:CreateSection("Scripts made by Kyra. Hub made by Usu
 local Button = MainTab:CreateButton({
    Name = "Kyra Gojo (Broken)",
    Callback = function()
-   loadstring(game:HttpGet("https://pastebin.com/raw/qxXCPqFG",true))()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/UsuhG/UsuhG/refs/heads/main/protectgojo1.txt",true))()
    end,
 })
 
