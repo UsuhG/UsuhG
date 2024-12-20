@@ -46,14 +46,14 @@ Rayfield:Notify({
 local MainSection = MainTab:CreateSection("Scripts made by Kyra. Hub made by UsuhG")
 
 local Button = MainTab:CreateButton({
-   Name = "Kyra Gojo",
+   Name = "Kyra Gojo (Broken)",
    Callback = function()
    loadstring(game:HttpGet("https://pastebin.com/raw/qxXCPqFG",true))()
    end,
 })
 
 local Button = MainTab:CreateButton({
-    Name = "Kyra Toji",
+    Name = "Kyra Toji (Broken)",
     Callback = function()
     loadstring(game:HttpGet("https://pastebin.com/raw/qvBj7ayf",true))()
     end,
