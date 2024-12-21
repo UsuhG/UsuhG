@@ -69,7 +69,29 @@ local Button = MainTab:CreateButton({
 })
 
 local Button = MainTab:CreateButton({
-   Name = "Kyra Kj",
+    Name = "Kyra KJ V2 (Whitelist version)",
+    Callback = function()
+--SETTINGS
+_G.TpDash = false --tp dashes
+_G.WallComboFrames = true
+_G.WallCutscene = true --cutscene for wallcombo
+_G.KJAnims = true --Plays real kj anims while others still see the FE anims
+_G.ImpactTransparency = 0 --if u wanna see the world while seeing the frames then set it to 0.3 or smth
+_G.MoreSFX = true -- unused rn --(Recommended if you want more spicier sfx than just official tsb sfx for kj)
+_G.InfiniteKJ = false --(dont use for now, it breaks the script after death aka with num4 or num3) (to disable after use, choose another character)
+_G.CustomBlock = true
+_G.nostunoption = false --(locks u in shiftlock, and makes u fast)
+_G.captions = true
+_G.nodashcooldown = true --removes dash cooldown (ONLY WORKS ON PRIVATE SERVERS)
+_G.FightMusic = true --turns ur mindset into the main character (plays under 75% health)
+_G.DashTech = true --might break dash for some users, but allows you to use dash tech
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/fartmaggot445/KYR/refs/heads/main/KJ"))()
+    end,
+})
+
+local Button = MainTab:CreateButton({
+   Name = "Kyra Kj.exe",
    Callback = function()
 --SETTINGS
 _G.TpDash = false --tp dashes
