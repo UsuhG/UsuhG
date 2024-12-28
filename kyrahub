@@ -223,7 +223,7 @@ end)
 })
 
 local Button = OthersTab:CreateButton({
-    Name = "Aimlock (Use C button on your keyboard),
+    Name = "Aimlock (Use C button on your keyboard)",
     Callback = function()
 local player = game.Players.LocalPlayer
 local mouse = player:GetMouse()
