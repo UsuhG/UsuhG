@@ -221,3 +221,132 @@ tool.Equipped:Connect(function()
 end)
     end,
 })
+
+local Button = OthersTab:CreateButton({
+    Name = "Aimlock (Use C button on your keyboard),
+    Callback = function()
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+local Aiming = false
+local uis = game:GetService("UserInputService")
+local target = nil
+local lastmagnitude = math.huge
+
+function GetTarget()
+	local params = OverlapParams.new()
+	params.FilterType = Enum.RaycastFilterType.Exclude
+	params.FilterDescendantsInstances = {player.Character}
+	local inbox = workspace:GetPartBoundsInBox(mouse.Hit,Vector3.new(1,1,1)*150,params)
+	if inbox then
+		for _,hit in pairs(inbox) do
+			local h = hit.Parent:FindFirstChildOfClass("Humanoid")
+			if h and h ~= player.Character.Humanoid then
+				local charpos = hit.Parent.PrimaryPart.CFrame.Position
+				local mousepos = mouse.Hit.Position
+				if (charpos - mousepos).Magnitude < lastmagnitude then
+					lastmagnitude = (charpos - mousepos).Magnitude
+					target = hit.Parent
+				end
+			end
+		end
+	end
+	
+end
+function AimLock()
+	if target then
+		local charpos = target.PrimaryPart.CFrame.Position
+		local cam = workspace.CurrentCamera
+		local pos = cam.CFrame.Position
+		--game.TweenService:Create(workspace.CurrentCamera,TweenInfo.new(.2),{CFrame = CFrame.new(pos, charpos)}):Play()
+		workspace.CurrentCamera.CFrame = CFrame.new(pos, charpos)
+	end
+end
+
+local inp = uis.InputBegan:Connect(function(input,istyping)
+	if istyping then return end
+	if input.KeyCode == Enum.KeyCode.C then
+		Aiming = not Aiming
+
+		if Aiming then
+			GetTarget()
+			local run
+			run = game:GetService("RunService").Stepped:Connect(function()
+				if not Aiming then
+					run:Disconnect()
+				end
+				AimLock()
+			end)
+		else
+			target = nil
+		end
+	end
+end)
+
+player.Character.Humanoid.Died:Connect(function()
+	inp:Disconnect()
+end)
+
+    end,
+})
+
+local Button = OthersTab:CreateButton({
+    Name = "Aimlock (Fixed)",
+    Callback = function()
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+local Aiming = false
+local uis = game:GetService("UserInputService")
+local target = nil
+local lastmagnitude = math.huge
+
+function GetTarget()
+    for i,v in pairs(game.Players:GetPlayers()) do
+        if v ~= player then
+            if v.Character then
+                local charpos = v.Character.PrimaryPart.CFrame.Position
+                local mousepos = mouse.Hit.p
+                if (charpos - mousepos).Magnitude < lastmagnitude then
+                    lastmagnitude = (charpos - mousepos).Magnitude
+                    target = v
+                end
+            end
+        end
+    end
+	
+end
+function AimLock()
+	if target then
+		local charpos = target.Character.PrimaryPart.CFrame.Position
+		local cam = workspace.CurrentCamera
+		local pos = cam.CFrame.Position
+		--game.TweenService:Create(workspace.CurrentCamera,TweenInfo.new(.2),{CFrame = CFrame.new(pos, charpos)}):Play()
+		workspace.CurrentCamera.CFrame = CFrame.new(pos, charpos)
+	end
+end
+
+local inp = uis.InputBegan:Connect(function(input,istyping)
+	if istyping then return end
+	if input.KeyCode == Enum.KeyCode.C then
+		Aiming = not Aiming
+
+		if Aiming then
+			GetTarget()
+			local run
+			run = game:GetService("RunService").Stepped:Connect(function()
+				if not Aiming then
+					run:Disconnect()
+				end
+				AimLock()
+			end)
+		else
+			target = nil
+		end
+	end
+end)
+
+player.Character.Humanoid.Died:Connect(function()
+	inp:Disconnect()
+end)
+
+    end,
+})
